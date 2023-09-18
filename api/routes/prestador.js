@@ -69,9 +69,10 @@ router.get('/id/:id', async(req, res) => {
  * Lista os prestadores de serviço pela razao social
  */
 
-router.get('/id/:id', async(req, res) => {
+router.get('/razao/:razao', async(req, res) => {
     try{
-        db.collection(nomeCollection).find({'razao_social': {$regex: req.params.razao, $options: (i)}})
+        db.collection(nomeCollection)
+        .find({'razao_social': {$regex: req.params.razao, $options: "i"}})
         .toArray((err, docs) => {
             if(err) {
                 res.status(400).json(err) //bad request

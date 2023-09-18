@@ -11,20 +11,20 @@ Content-Type: application/json/
 ###
 // GET - Lista um registro pelo id
 
-GET {{baseURL}}/id/64ff26598560ed183e9aca8d
+GET {{baseURL}}/id/65086aeb7d2a315b53b39f8a
 Content-Type: application/json
 
 ###
 // GET - Lista um registro pela razao
 
-GET {{baseURL}}/razao/Rosita espinosa
+GET {{baseURL}}/razao/Rosita
 Content-Type: application/json
 
 
 ###
 // DELETE - Apaga um registro pelo id
 
-DELETE {{baseURL}}/64ff26598560ed183e9aca8d
+DELETE {{baseURL}}/65086d09beeae064cfa69066
 Content-Type: application/json/
 
 ###
