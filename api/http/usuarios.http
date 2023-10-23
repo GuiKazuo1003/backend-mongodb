@@ -42,3 +42,20 @@ access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjUzN
 DELETE {{baseURL}}/65366d2eaaa5ec97de27daf5
 Content-Type: application/json
 access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjUzNjZkMmVhYWE1ZWM5N2RlMjdkYWY1In0sImlhdCI6MTY5ODA2OTA3MywiZXhwIjoxNjk4MzI4MjczfQ.n8xrWtqPIzcuoBWGj0mS6q1cR5zRRUIy44s5EOaD524
+
+
+###
+// PUT - Edita o usuário pelo id
+
+PUT {{baseURL}}/65368bb55af474724dc035bd
+Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjUzNjZkMmVhYWE1ZWM5N2RlMjdkYWY1In0sImlhdCI6MTY5ODA2OTA3MywiZXhwIjoxNjk4MzI4MjczfQ.n8xrWtqPIzcuoBWGj0mS6q1cR5zRRUIy44s5EOaD524
+
+{
+    "nome": "José Alves ALTERADO",
+    "email": "ze2@uol.com.br",
+    "senha": "Alun0@",
+    "avatar": "https://ui-avatars.com/api/?name=JoségAlves&background=F00&color=00F",
+    "ativo": true,
+    "tipo": "Cliente"
+}

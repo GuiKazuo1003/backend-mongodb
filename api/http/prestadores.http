@@ -7,18 +7,21 @@
 
 GET {{baseURL}}
 Content-Type: application/json/
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjUzNjZkMmVhYWE1ZWM5N2RlMjdkYWY1In0sImlhdCI6MTY5ODA2OTA3MywiZXhwIjoxNjk4MzI4MjczfQ.n8xrWtqPIzcuoBWGj0mS6q1cR5zRRUIy44s5EOaD524
 
 ###
 // GET - Lista um registro pelo id
 
 GET {{baseURL}}/id/65086b8ed5902b4232545475
 Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjUzNjZkMmVhYWE1ZWM5N2RlMjdkYWY1In0sImlhdCI6MTY5ODA2OTA3MywiZXhwIjoxNjk4MzI4MjczfQ.n8xrWtqPIzcuoBWGj0mS6q1cR5zRRUIy44s5EOaD524
 
 ###
 // GET - Lista um registro pela razao
 
 GET {{baseURL}}/razao/josue
 Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjUzNjZkMmVhYWE1ZWM5N2RlMjdkYWY1In0sImlhdCI6MTY5ODA2OTA3MywiZXhwIjoxNjk4MzI4MjczfQ.n8xrWtqPIzcuoBWGj0mS6q1cR5zRRUIy44s5EOaD524
 
 
 ###
@@ -26,12 +29,14 @@ Content-Type: application/json
 
 DELETE {{baseURL}}/65086d09beeae064cfa69066
 Content-Type: application/json/
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjUzNjZkMmVhYWE1ZWM5N2RlMjdkYWY1In0sImlhdCI6MTY5ODA2OTA3MywiZXhwIjoxNjk4MzI4MjczfQ.n8xrWtqPIzcuoBWGj0mS6q1cR5zRRUIy44s5EOaD524
 
 ###
 // POST - Insere um novo registro
 
 POST {{baseURL}}
 Content-Type: application/json/
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjUzNjZkMmVhYWE1ZWM5N2RlMjdkYWY1In0sImlhdCI6MTY5ODA2OTA3MywiZXhwIjoxNjk4MzI4MjczfQ.n8xrWtqPIzcuoBWGj0mS6q1cR5zRRUIy44s5EOaD524
 
 {
     "cnpj": "99150718777142",
@@ -49,6 +54,7 @@ Content-Type: application/json/
 //PUT - Altera o registro
 PUT {{baseURL}}
 Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjUzNjZkMmVhYWE1ZWM5N2RlMjdkYWY1In0sImlhdCI6MTY5ODA2OTA3MywiZXhwIjoxNjk4MzI4MjczfQ.n8xrWtqPIzcuoBWGj0mS6q1cR5zRRUIy44s5EOaD524
 
 {
         "_id": "64ff26598560ed183e9aca8d",

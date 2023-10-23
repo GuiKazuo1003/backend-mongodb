@@ -170,7 +170,7 @@ router.delete('/:id',auth, async(req, res) => {
  * Altera os dados do usuário pelo id. Necessita do token
  */
 
-router.put('/:id', validaUsuario, async (req,res) => {
+router.put('/:id', auth, validaUsuario, async (req,res) => {
     const schemaErrors = validationResult(req)
     if(!schemaErrors.isEmpty()){
         return res.status(403).json({
@@ -178,7 +178,7 @@ router.put('/:id', validaUsuario, async (req,res) => {
         })
     } else {
         await db.collection(nomeCollection)
-        .uptadeOne({'_id': {$eq: ObjectId(req.params.id)}},
+        .updateOne({'_id': {$eq: ObjectId(req.params.id)}},
         { $set: req.body }
         )
         .then(result => res.status(202).send(result))
