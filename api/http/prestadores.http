@@ -11,13 +11,13 @@ Content-Type: application/json/
 ###
 // GET - Lista um registro pelo id
 
-GET {{baseURL}}/id/65086aeb7d2a315b53b39f8a
+GET {{baseURL}}/id/65086b8ed5902b4232545475
 Content-Type: application/json
 
 ###
 // GET - Lista um registro pela razao
 
-GET {{baseURL}}/razao/Rosita
+GET {{baseURL}}/razao/josue
 Content-Type: application/json
 
 
