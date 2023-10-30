@@ -81,55 +81,56 @@ router.post('/', validaUsuario, async(req, res) => {
 
 const validaLogin = [
     check('email')
-    .not().isEmpty().trim().withMessage('O email é obrigatório')
-    .isEmail().withMessage('Informe um e-mail válido'),
+        .not().isEmpty().trim().withMessage('O email é obrigatório!')
+        .isEmail().withMessage('Informe um e-mail válido'),
     check('senha')
-    .not().isEmpty().trim().withMessage('A senha é obrigatória')
-    .isLength({min:6}).withMessage('A senha deve ter no mínimo 6 carac.'),
+        .not().isEmpty().trim().withMessage('A senha é obrigatória!')
+        .isLength({ min: 6 }).withMessage('A senha deve ter no mínimo 6 carac.')
 ]
 
-router.post('/login', validaLogin, async(req, res)=> {
+router.post('/login', validaLogin, async (req, res) => {
     const schemaErrors = validationResult(req)
-    if(!schemaErrors.isEmpty()){
-        return req.status(403).json(({errors: schemaErrors.array()}))
+    if (!schemaErrors.isEmpty()) {
+        return res.status(403).json(({ errors: schemaErrors.array() }))
     }
     //obtendo os valores do login
-    const {email, senha} = req.body
-    try{
+    const { email, senha } = req.body
+    try {
         //Verificando se o email informado existe no Mongodb
         let usuario = await db.collection(nomeCollection)
-                            .find({email}).limit(1).toArray()
+            .find({ email }).limit(1).toArray()
         //Se o array estiver vazio, é que o email não existe
-        if(!usuario.length)
+        if (!usuario.length)
             return res.status(404).json({
-        errors: [{
-                value: `${email}`,
-                msg: 'O email informado não está cadastrado',
-                param: 'email'}]
+                errors: [{
+                    value: `${email}`,
+                    msg: 'O email informado não está cadastrado',
+                    param: 'email'
+                }]
             })
-
-        //Se o email existir, comparamos se a senha está correta
+        //Se o email existir, comparamos se a senha está correta  
         const isMatch = await bcrypt.compare(senha, usuario[0].senha)
-        if(!isMatch)
+        if (!isMatch)
             return res.status(403).json({
-            errors: [{
+                errors: [{
                     value: `senha`,
                     msg: 'A senha informada está incorreta',
-                    param: 'senha'}]
+                    param: 'senha'
+                }]
             })
-    //iremos gerar o token JWT
-    jwt.sign(
-        {usuario: {id: usuario[0]._id}}, //só o id vai com o _ o resto é normal
-        process.env.SECRET_KEY,
-        {expiresIn: process.env.EXPIRES_IN},
-        (err, token) => {
-            if(err) throw err
-            res.status(200).json({
-                access_token: token
-            })
-        }
-    )
-    } catch(e){
+        //Iremos gerar o token JWT
+        jwt.sign(
+            { usuario: { id: usuario[0]._id } },
+            process.env.SECRET_KEY,
+            { expiresIn: process.env.EXPIRES_IN },
+            (err, token) => {
+                if (err) throw err
+                res.status(200).json({
+                    access_token: token
+                })
+            }
+        )
+    } catch (e) {
         console.error(e)
     }
 })
